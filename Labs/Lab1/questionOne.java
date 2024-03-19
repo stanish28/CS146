@@ -1,4 +1,4 @@
-package Labs.Lab1;
+package Lab1;
 
 public class questionOne {
     public static int[]  twoSum(int[] nums, int target) {
