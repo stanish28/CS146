@@ -1,0 +1,16 @@
+Insertion sort works by dividing the input list into a sorted and an unsorted region. The algorithm iteratively takes each element from the unsorted region and inserts it into the correct position in the sorted region. This is done by comparing the current element with each of the elements in the sorted region, from right to left, until finding the correct position for the current element.
+
+Time Complexity Analysis:
+
+Best Case (The list is already sorted): O(n). The algorithm only needs to make one comparison per element.
+Average Case: O(n^2). Each insertion operation, on average, requires comparisons and shifts proportional to the number of elements already sorted.
+Worst Case (The list is sorted in reverse order): O(n^2). Each new element has to be compared with all the elements in the sorted sub-array to find its correct position.
+
+
+Matrix Multiplication Algorithm Overview:
+
+The provided pseudocode for matrix multiplication takes two matrices, A and B, and multiplies them if they are compatible (the number of columns in A equals the number of rows in B). The result is a new matrix where each element is computed by taking the dot product of rows from A with columns from B.
+
+Time Complexity Analysis:
+
+Time Complexity: The time complexity of matrix multiplication is O(n^3) for square matrices of size n x n. This is because for each of the n^2 elements in the resulting matrix, the algorithm performs n multiplications and n-1 additions (which can also be considered O(n) operations). Thus, the overall time complexity is O(n^3).
