@@ -1,0 +1,22 @@
+Linear Search
+
+- Begin from version 1 and sequentially check each version to determine if it's bad.
+- The first bad version encountered signifies all subsequent versions are also bad, providing the answer.
+
+
+- Time Complexity O(n), where n is the total number of versions. This approach could be inefficient, especially with a large number of versions, as it may require checking each version sequentially until the bad one is found.
+- Space Complexity O(1), utilizing minimal extra space.
+
+Binary Search (Recommended)
+
+- Implement a binary search technique to efficiently minimize the number of API calls to `isBadVersion`.
+- Start with the full range of versions as the search space. Repeatedly check the midpoint of the current search range; if this version is bad, all versions after it are also bad, so the search space is narrowed to the left half. If not, the right half is considered.
+- This process is repeated, halving the search space with each step, until the first bad version is identified.
+
+
+- Time Complexity: O(log n), significantly more efficient than linear search, particularly beneficial as the number of versions increases.
+- Space Complexity: O(1), requiring only a few variables for managing the search bounds.
+
+onclusion
+
+The binary search approach is particularly suited for this problem, as it drastically reduces the number of required API calls to `isBadVersion`, thereby identifying the first bad version in a log(n) time complexity, making it highly efficient for large datasets.
