@@ -1,0 +1,14 @@
+# Inverting a Binary Tree
+
+### Recursion
+Recursively swap the left and right children of the current node until reaching the leaves of the tree.
+
+### Python
+In Python, this is implemented in a simple recursive function that checks for the base case (null node), then calls itself for the left and right children, and swaps them.
+
+### Java
+In Java, the approach is the same as Python, but with a syntax appropriate for Java. An auxiliary `TreeNode` variable is used to hold one of the branches during the swap.
+
+## Follow-up (Iterative Approach)
+For the iterative approach, a stack or queue can be used to process nodes breadth-first or depth-first, respectively, while swapping the children of each node.
+
