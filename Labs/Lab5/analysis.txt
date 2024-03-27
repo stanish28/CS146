@@ -1,0 +1,12 @@
+# Validating a Binary Search Tree
+
+
+The key to solving this problem is to use recursion to traverse the tree while maintaining a valid range for each node's value. At the root node, the range is unbounded. As we move to the left child, the upper bound becomes the parent's value. Similarly, moving to the right child sets the lower bound to the parent's value. This method ensures that every node in the tree adheres to the binary search tree property: each node's value is greater than all values in its left subtree and less than all values in its right subtree.
+
+### Python Solution
+
+In Python, we implement a recursive function that checks if a node's value falls within the valid range. The base case for the recursion is when we reach a `None` node, at which point we return `True` because an empty tree is a valid BST by definition. We then check the current node's value against its range. If it falls outside, we return `False`. Otherwise, we recursively validate the left and right subtrees.
+
+### Java Solution
+
+The Java solution mirrors the Python one but includes type declarations. We use `long` for the bounds to handle the edge case of `Integer.MIN_VALUE` and `Integer.MAX_VALUE` being valid values for the nodes. The logic remains the same: check the node's value against its range and recursively validate the subtrees.
