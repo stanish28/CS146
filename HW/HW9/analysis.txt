@@ -1,0 +1,22 @@
+Explaining the Approach to Find the Lowest Common Ancestor in a BST
+Introduction
+The problem of finding the lowest common ancestor (LCA) of two nodes in a binary search tree (BST) is a common question in computer science, particularly in algorithms related to tree data structures. The LCA of two nodes p and q in a BST is defined as the lowest node in the tree that has both p and q as descendants, where a node can be a descendant of itself.
+
+Approach to Find the LCA
+Recursive Approach
+The recursive approach leverages the BST properties to minimize the search space. The key idea is to traverse the tree starting from the root and make use of the following observations:
+
+If both nodes p and q are greater than the root, the LCA must be in the right subtree.
+If both nodes p and q are less than the root, the LCA must be in the left subtree.
+If one node is on one side of the root and the other node is on the other side, the root is the LCA.
+The base case for the recursion occurs when either the current node is null (indicating the nodes are not found) or when the current node matches one of the nodes p or q.
+
+Iterative Approach
+The iterative approach follows a similar logic to the recursive approach but uses a loop instead of recursion. This method iterates through the tree starting from the root and moves left or right based on the comparison between the nodes' values and the current node's value. The search terminates when:
+
+The current node is the LCA, i.e., p and q are on different sides of this node.
+The current node is one of the nodes p or q.
+This approach avoids the stack space overhead that comes with recursion, making it more space-efficient.
+
+Conclusion
+Both the recursive and iterative approaches efficiently find the LCA in a BST by exploiting the BST properties to reduce the search space. While the recursive approach is straightforward and elegant, the iterative approach provides a space-efficient alternative that avoids the potential stack overflow risk associated with deep recursion.

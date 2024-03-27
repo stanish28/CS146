@@ -1,0 +1,22 @@
+Insertion Sort Algorithm Overview:
+Insertion Sort iteratively builds a sorted sequence from the input elements. For each iteration, it removes one element from the input data, finds the location it belongs within the already-sorted sequence, and inserts it there. This process repeats until no unsorted elements remain.
+
+Best Case Scenario: This occurs when the input array is already sorted. For each element, the algorithm only needs to compare it to the element directly before it to confirm it's in the correct place. Thus, it makes only n−1 comparisons and zero swaps, leading to a time complexity of O(n).
+Average Case Scenario: On average, half of the elements in the sorted portion need to be traversed to find the correct insertion point for each element. This gives us roughly comparisons and the same number of swaps, simplifying to O(n^2).
+Worst Case Scenario: The worst case occurs when the array is sorted in reverse order. Each new element has to be compared with all the previously sorted elements, resulting in n(n−1) comparisons and swaps, which simplifies to O(n^2).
+
+Problem 2: Matrix Multiplication Time Complexity Analysis
+Matrix Multiplication Algorithm Overview:
+The pseudocode describes a straightforward approach to matrix multiplication, requiring that the number of columns in the first matrix A matches the number of rows in the second matrix B. The result is a new matrix where each element is computed by the dot product of a row from A and a column from B.
+
+Best Case Scenario: Unlike some algorithms where inputs can affect the number of operations, matrix multiplication's complexity is solely determined by the dimensions of the input matrices. Therefore, the "best case" concept doesn't quite apply as it does with algorithms like sorting. The operation count remains consistent for a given set of matrix sizes.
+Average Case Scenario: As with the best case, the average case doesn't differ because the operation count is fixed once the sizes of the input matrices are set.
+Worst Case Scenario: The time complexity is determined by the size of the input matrices. Given matrix 
+
+A of size m×n and matrix B of size n×p, the algorithm performs m×p dot products, each requiring n multiplications and n−1 additions. This leads to a time complexity of O(mnp), as each element of the resultant matrix requires n operations (multiplications) and n−1 additions are negligible in terms of asymptotic complexity.
+
+
+Conclusion:
+
+For Insertion Sort, the time complexity ranges from O(n) in the best case to O(n^2) in the average and worst cases.
+For Matrix Multiplication, the time complexity is O(mnp) for all cases, as it is directly determined by the dimensions of the input matrices, without any variability based on the matrices' content or order.
