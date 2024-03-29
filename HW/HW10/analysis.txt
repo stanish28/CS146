@@ -1,0 +1,14 @@
+
+## Approach
+
+The approach we used for solving this problem is the BFS algorithm, which is well-suited for traversing trees level by level. BFS uses a queue data structure to keep track of the nodes at the current level and to visit their child nodes in the next level. 
+
+## Complexity
+
+- **Time Complexity**: `O(n)` where `n` is the number of nodes in the tree, since each node is processed exactly once.
+- **Space Complexity**: `O(n)` for the queue, in the worst case when the tree is completely unbalanced and resembles a linked list.
+
+## Conclusion
+
+By using the BFS approach, we effectively visited each node in the tree in a level order fashion. This algorithm is versatile and can be applied to any binary tree, regardless of its shape or size, as long as it does not contain cycles.
+
