@@ -1,0 +1,19 @@
+1) As n grows larger, n^3 term grows faster than any constant multiple of n^2
+hence it is asymptotically greater
+
+2) n^2log(n) grows faster due to the presence of n^2, hence it asymptotically greater
+
+3) 2^n grows faster as it has exponential growth comapred to the polynomial groweth of nlog(n)
+
+4) 2^2n is asymptotically greater as it grows exponentially faster than 2^n
+
+Problem 2:
+
+
+
+Best Case - O(1) (N is even number greater than 2)
+Worst Case - O(sqrt(n)) (when n is prime number requiring the loop to iterate )
+Average Case O(sqrt(n)) (when n is prime number requiring the loop to iterate )
+
+
+ 
