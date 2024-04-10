@@ -1,0 +1,12 @@
+we can use either Depth-First Search (DFS) or Breadth-First Search (BFS) as our flood fill algorithm. Both approaches work by exploring all 4-directionally connected pixels of the same original color starting from (sr, sc) and coloring them with the new color. The key difference between them lies in the order in which they explore the pixels:
+
+DFS uses a stack and explores as far as possible along each branch before backtracking.
+
+Breadth-First Search (BFS) uses a queue and explores all neighbors of a pixel before moving on to the neighbors of those neighbors.
+
+The high-level approach for both the DFS and BFS algorithms involves:
+
+Checking if the starting pixel already has the target color. If it does, no action is needed.
+Initiating the fill operation from the starting pixel (sr, sc).
+For DFS, recursively explore all valid 4-directionally connected pixels. For BFS, use a queue to iteratively explore all such pixels.
+Mark each visited pixel with the new color to avoid revisiting it.
