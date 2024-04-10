@@ -1,0 +1,90 @@
+1. Convert an Adjacency List to an Adjacency Matrix
+
+Initialize a matrix of size VxV with all values as 0, where V is the number of vertices in the graph.
+Iterate over each vertex in the adjacency list. For each vertex, go through its adjacency list and for each neighbor, set the corresponding cell in the matrix to 1.
+
+Pseudocode - 
+
+function adjacencyListToMatrix(adjList):
+    V = length(adjList)
+    adjMatrix = createMatrix(V, V, 0)
+    
+    for u from 0 to V-1:
+        for each v in adjList[u]:
+            adjMatrix[u][v] = 1
+    
+    return adjMatrix
+
+Python (Because its easy) - 
+
+def adjacencyListToMatrix(adjList):
+    V = len(adjList)
+    adjMatrix = [[0 for _ in range(V)] for _ in range(V)]
+    
+    for u in range(V):
+        for v in adjList[u]:
+            adjMatrix[u][v] = 1
+            
+    return adjMatrix
+
+
+2.)Convert an Adjacency Matrix to an Adjacency List -
+
+Initialize an empty list of lists.
+
+Iterate through each row of the matrix. For each cell that contains a 1, add the column index to the adjacency list of the current row.
+
+Pseudocode:
+function adjacencyMatrixToList(adjMatrix):
+    V = length(adjMatrix)
+    adjList = initializeList(V)
+    
+    for u from 0 to V-1:
+        for v from 0 to V-1:
+            if adjMatrix[u][v] == 1:
+                append v to adjList[u]
+    
+    return adjList
+
+Python - 
+def adjacencyMatrixToList(adjMatrix):
+    V = len(adjMatrix)
+    adjList = [[] for _ in range(V)]
+    
+    for u in range(V):
+        for v in range(V):
+            if adjMatrix[u][v] == 1:
+                adjList[u].append(v)
+                
+    return adjList
+
+3) Reverse the Direction of Each Edge in a Directed Graph
+
+Initialize a new adjacency list with empty lists for each vertex.
+
+Iterate over each vertex in the original adjacency list. For each neighbor of a vertex, add the original vertex to the neighbor’s list in the new adjacency list.
+
+Pseudocode - 
+
+function reverseEdges(adjList):
+    V = length(adjList)
+    reversedList = initializeList(V)
+    
+    for u from 0 to V-1:
+        for each v in adjList[u]:
+            append u to reversedList[v]
+    
+    return reversedList
+
+
+Python - 
+def reverseEdges(adjList):
+    V = len(adjList)
+    reversedList = [[] for _ in range(V)]
+    
+    for u in range(V):
+        for v in adjList[u]:
+            reversedList[v].append(u)
+            
+    return reversedList
+
