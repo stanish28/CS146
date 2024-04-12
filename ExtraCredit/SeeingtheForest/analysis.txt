@@ -1,0 +1,8 @@
+Time Complexity
+
+The Red-Black Tree maintains balance with each operation, ensuring that the tree height is logarithmic relative to the number of nodes, O(log n)
+
+
+Space Complexity
+
+Each node in a Red-Black Tree stores several fields: data, color, and three references (left child, right child, and parent), regardless of the specific value it holds. The space required for each node is thus constant, but the total space for the tree scales linearly with the number of nodes, O(log n)

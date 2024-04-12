@@ -1,0 +1,7 @@
+# Topological Sorting Examples
+
+This repository contains implementations of three topological sorting algorithms:
+
+Kahn's Algorithm** - A BFS-based approach using in-degrees.
+DFS-based Topological Sort** - Uses a recursive DFS method to sort the nodes.
+
