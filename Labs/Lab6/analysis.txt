@@ -1,0 +1,12 @@
+This document outlines the approaches used to solve the course scheduling problem, which involves determining if all courses can be finished given a set of prerequisites. The problem is modeled as a directed graph where each node represents a course, and directed edges represent the prerequisite requirements.
+
+Graph Representation: Each course is represented as a node, and a directed edge from node bi to node ai is created for each prerequisite [ai, bi].
+Visited States: Each node can be in one of three states: unvisited, visiting, or visited.
+Cycle Detection: A recursive DFS is initiated from each unvisited node. If a node being visited is encountered again (marked as 'visiting'), a cycle is detected.
+Completion Check: After visiting all reachable nodes from the starting node, if no cycle is found, the node is marked as 'visited'. The process is repeated for all nodes.
+
+Kahn's Algorithm is used to perform topological sorting based on the in-degree of nodes. Nodes with an in-degree of zero (no prerequisites) can be "taken" immediately. This approach not only checks for the feasibility of completing all courses but also provides an order of courses to be taken.
+
+Implementation Details
+In-degree Array: An array to count the number of prerequisites (in-degrees) for each course.
+Graph Construction: Similar to DFS, a graph is constructed where each directed edge represents a prerequisite.
