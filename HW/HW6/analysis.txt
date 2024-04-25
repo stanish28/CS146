@@ -1,0 +1,16 @@
+
+   - First, we sort the array. Sorting helps in easily skipping duplicates and efficiently using the two-pointer technique.
+
+   - For each element in the array, set one pointer just after the current element (left) and another at the end of the array (right).
+   - Calculate the sum of the elements at these three positions. If the sum is zero, add it to the result list.
+   - Move the left pointer right to skip duplicates if the sum is less than zero, or move the right pointer left if the sum is greater than zero.
+
+   - After processing a triplet, skip all duplicates of the element currently being considered to avoid adding duplicate triplets to the result.
+
+- This method is efficient as it reduces the problem to a two-sum problem, which can be solved in linear time using two pointers.
+
+
+- The initial sorting takes (O(n \log n) time, which is necessary for the two-pointer approach to work effectively.
+
+
+This approach effectively finds all unique triplets in the array that sum up to zero, utilizing the sorted property of the array to manage and check pairs efficiently.
