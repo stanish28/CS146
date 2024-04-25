@@ -1,0 +1,19 @@
+Steps Applied in the Solution:
+
+Virtual Node Introduction: Introduce a virtual node that is connected to all other nodes (houses). The weight of the edge between the virtual node and each house node is equal to the cost of building a well in that house. This approach allows the algorithm to choose between building a well or using a pipe for each house naturally as part of the MST construction.
+Graph Representation: Create an adjacency list to represent the graph. The graph includes the virtual node (node 0) and edges both for wells and pipes.
+
+Priority Queue: Use a priority queue to manage the edges during the MST construction. The priority queue helps in selecting the edge with the minimum weight that can be added to the MST without forming a cycle.
+
+MST Construction:
+Start with the virtual node and mark it as visited.
+Add all its connecting edges (well costs to all houses) to the priority queue.
+While the priority queue is not empty and not all nodes are visited:
+Choose the edge with the minimum cost.
+
+If the connected node (house) has not been visited:
+Add this edge to the MST.
+Mark the node as visited.
+Add all its connecting edges to the priority queue.
+
+Final Cost Calculation: The sum of the weights of the edges in the MST represents the minimum cost to supply water to all houses.
