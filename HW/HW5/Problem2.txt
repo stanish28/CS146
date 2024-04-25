@@ -1,0 +1,10 @@
+The function yetAnotherFunc(n) involves two recursive calls of itself with the argument halved, and a loop that runs 10n times. The recurrence relation is:
+
+
+T(n)=2T(n/2)+10n
+
+Using the master theorem:
+𝑎=2,𝑏=2,𝑓(𝑛)=10𝑛
+log⁡𝑏(𝑎)=log⁡2(2)=1
+Since f(n)=10n, we're in Case 3: T(n)=Θ(nlogn).
+

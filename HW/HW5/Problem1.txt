@@ -1,0 +1,40 @@
+T(N) = 2T(N-1) + 1
+This is a linear non-homogeneous recurrence relation. The master method isn't applicable here, so we'll use the recursion tree method:
+Base case: Assume T(1) = 1.
+At each level, the cost is doubled from the previous level plus an additional constant 1.
+After expanding a few levels, you'll notice that the cost accumulates like a geometric series.
+The depth of the recursion is N, so the total work done is approximately 2^N, indicating an exponential growth.
+
+T(N) = 3T(N-1) + N
+Again, the master theorem doesn’t apply, and we'll use a similar approach:
+This grows faster than the previous due to the addition of N at each step.
+The total work is dominated by the recursive calls, which are multiplied by 3 each time, leading to exponential growth with an additional linear factor. Thus, the solution is exponential, adjusted by a polynomial term.
+
+T(N) = 9T(N/2) + N^2
+Here, we can apply the master theorem:
+𝑎=9,𝑏=2,𝑓(𝑁)=𝑁^2
+log⁡b(𝑎)=log⁡2(9)≈3.17
+Since N^2 grows slower than 𝑁^3.17, we're in Case 1 of the master theorem:
+Thus,
+𝑇(𝑁)=Θ(𝑁^3.17)
+
+T(N) = 100T(N/2) + N\log_2^cN + 1
+Assuming the log term dominates the constant:
+𝑎=100,𝑏=2,𝑓(𝑁)=𝑁log^c2𝑁
+log⁡𝑏(𝑎)=log⁡2(100)≈6.64
+Depending on the value of c, compare 𝑁 log⁡^c2𝑁  with 𝑁^6.64
+Typically, the polynomial term will dominate, thus 𝑇(𝑁)=Θ(𝑁^6.64)
+
+T(N) = 4T(N/2) + N^2\log N
+𝑎=4,𝑏=2,𝑓(𝑁)=𝑁^2log⁡𝑁
+log⁡𝑏(𝑎)=log⁡2(4)=2
+𝑁^2log⁡𝑁 is bigger than 𝑁^2 but still fits in Case 3 (slightly bigger than 𝑁^2):
+𝑇(𝑁)=Θ(𝑁^2log⁡𝑁)
+
+
+T(N) = 5T(N/2) + N^2/\log N
+𝑎=5,𝑏=2,𝑓(𝑁)=𝑁^2/log⁡𝑁
+log⁡𝑏(𝑎)=log⁡2(5)≈2.32
+𝑁^2/log⁡𝑁 grows slower than
+𝑁^2.32, indicating Case 1:
+𝑇(𝑁)=Θ(𝑁^2.32)
