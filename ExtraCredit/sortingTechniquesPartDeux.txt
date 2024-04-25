@@ -1,0 +1,47 @@
+
+Heaps are an excellent way to implement priority queues due to their efficient properties for insertion and deletion. Here's how a heap can function as a priority queue:
+
+Min-Heap for Priority Queue: A min-heap is a binary tree where each parent node is less than or equal to its child nodes. It's used to quickly access the smallest element.
+Max-Heap for Priority Queue: Conversely, a max-heap is a binary tree where each parent node is greater than or equal to its child nodes, facilitating quick access to the largest element.
+
+Insert(value):
+    Add value to the end of the heap
+    Bubble up the value to maintain heap property (swap with parent until order is correct)
+
+ExtractMin():
+    Swap the root of the heap with the last element
+    Remove the last element (the previous root)
+    Bubble down the new root to maintain heap property (swap with the smallest child until order is correct)
+
+Peek():
+    Return the root element (minimum)
+
+
+You can use a max heap as a min heap without implementing a min heap separately by inverting the comparison criteria. Instead of modifying the heap structure, you can modify the values being inserted:
+
+Using a Max Heap as a Min Heap: Multiply all elements by -1 before inserting them into the heap and after extracting them. This inversion will turn higher absolute values (low priority in a max heap) into lower absolute values (high priority in a min heap).
+
+Python version - 
+import heapq
+
+class MinHeapUsingMaxHeap:
+    def __init__(self):
+        self.heap = []
+
+    def insert(self, val):
+        heapq.heappush(self.heap, -val)
+
+    def extract_min(self):
+        return -heapq.heappop(self.heap)
+
+    def peek(self):
+        return -self.heap[0]
+
+Explanation:
+
+Insert: Multiplying by -1 before pushing to the heap inverts the order.
+
+Extract/Peek: Multiplying by -1 after popping from the heap returns the correct value.
+
+The opposite is true as well; you can use a min heap as a max heap by applying the same negative multiplication, ensuring that the priority is inverted.
+
