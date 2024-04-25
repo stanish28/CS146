@@ -1,0 +1,19 @@
+
+This problem involves scheduling jobs (represented as time intervals) on servers, ensuring that no two jobs overlap on the same server unless one finishes before the other starts. The goal is to use the minimum number of servers.
+
+   - First, sort the intervals by their start times. This ordering allows us to handle jobs as they come, ensuring that we allocate servers in the order jobs need to start.
+
+   - Utilize a min-heap (priority queue) to keep track of when each server will be free (i.e., the end times of jobs currently being executed).
+   - For each job, if the job's start time is greater than or equal to the earliest end time in the heap, reuse that server (pop from heap and push the new end time).
+   - If no server is free, allocate a new server (push the end time into the heap).
+
+   - By reusing servers as soon as they become free, the heap size at any point gives the minimum number of servers currently needed.
+   - The heap's maximum size throughout processing is the answer to the problem.
+
+Sorting the jobs and using a priority queue ensures that each job is processed in optimal time, allowing for efficient server allocation.
+Handles up to 10,000 jobs efficiently due to the (O(n log n) complexity from sorting and heap operations.
+
+- Suitable for scheduling resources in computing environments where jobs are to be executed on servers with overlapping execution times.
+
+This approach effectively leverages data structures to manage dynamic data efficiently, ensuring minimal server usage and optimal scheduling.
+
