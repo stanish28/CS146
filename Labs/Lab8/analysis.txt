@@ -1,0 +1,20 @@
+
+Dynamic Programming (DP)
+
+
+
+1.DP Array Initialization:**
+   - Create a DP array `dp` where each index `i` represents the minimum number of coins needed to make up the amount `i`.
+   - Initialize `dp[0]` to 0, as no coins are needed for the amount 0.
+   - Initialize all other values to a high value (greater than the maximum possible number of coins required), commonly set to `amount + 1`.
+
+2.Update DP Array:**
+   - Iterate through each amount from 1 up to the target amount.
+   - For each amount, iterate through each coin denomination:
+     - If the coin's value is less than or equal to the current amount, update the DP array:
+       - Set `dp[i]` to the minimum of its current value and `dp[i - coin] + 1`. The `+1` accounts for the addition of the current coin to the total.
+
+3.Result Evaluation:**
+   - After populating the DP array, the value at `dp[amount]` indicates the minimum number of coins required for the amount.
+   - If `dp[amount]` remains set to the initialized high value, it means that it is not possible to form the target amount with the given coins, hence return -1.
+
